@@ -71,7 +71,7 @@ const Animation = () => {
   }
 
   return (
-    <div className=" container">
+    <div className="container">
       <div className="relative sliderBorder w-full h-[50vh] sm:h-[60vh] md:h-[80vh] lg:h-[90vh] xl:h-[90vh] overflow-hidden">
         {/* Header */}
         <div className="absolute top-0 left-0 w-full z-30">
@@ -92,11 +92,6 @@ const Animation = () => {
                 backgroundImage: `url(${slide.bacgroundImg})`,
                 zIndex: "-1",
               }}
-            ></div>
-
-            <div
-              className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-[#1d1c2b] via-[#1d1c2b] to-transparent opacity-90"
-              style={{ zIndex: "1" }}
             ></div>
 
             {/* Full Slide Darkness Overlay */}
@@ -153,17 +148,17 @@ const Animation = () => {
           style={{
             flexDirection: "column",
           }}
-          className="absolute bottom-4 right-4 flex gap-2 z-30 "
+          className="absolute bottom-4 right-4 flex gap-2 z-30"
         >
           <button
             onClick={handlePrevSlide}
-            className="bg-gray-600 bg-opacity-70 text-white p-2 rounded-lg hover:bg-opacity-90 "
+            className="bg-gray-600 bg-opacity-70 text-white p-2 rounded-lg hover:bg-opacity-90"
           >
             <FaChevronLeft size={20} />
           </button>
           <button
             onClick={handleNextSlide}
-            className="bg-gray-600 bg-opacity-70 text-white p-2 rounded-lg hover:bg-opacity-90 "
+            className="bg-gray-600 bg-opacity-70 text-white p-2 rounded-lg hover:bg-opacity-90"
           >
             <FaChevronRight size={20} />
           </button>
