@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { AiOutlineArrowRight } from "react-icons/ai";
 import { CiCircleInfo } from "react-icons/ci";
 import { GoPlay } from "react-icons/go";
 import { Link } from "react-router-dom";
+import { aniDubApi } from "../../Api/Api";
 
 function Card() {
   const [data, setData] = useState([]);
@@ -11,7 +11,7 @@ function Card() {
   const [modalPosition, setModalPosition] = useState("right");
 
   useEffect(() => {
-    axios.get("https://a510c4f98367eca1.mokky.dev/aniDub").then((res) => {
+    axios.get(aniDubApi).then((res) => {
       setData(res.data);
     });
   }, []);

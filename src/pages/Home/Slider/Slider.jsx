@@ -13,6 +13,7 @@ import Header from "../../../components/Header";
 import { IoTimeOutline, IoTimeSharp } from "react-icons/io5";
 import { CiCalendarDate } from "react-icons/ci";
 import Skeleton from "react-loading-skeleton";
+import { sliderApi } from "../../../Api/Api";
 
 const Animation = () => {
   const [slides, setSlides] = useState([]);
@@ -21,7 +22,7 @@ const Animation = () => {
 
   useEffect(() => {
     axios
-      .get("https://6d548820c3f18dbd.mokky.dev/menuAnimation")
+      .get(sliderApi)
       .then((res) => {
         const menu = res.data;
         setSlides(menu || []);

@@ -9,6 +9,7 @@ import { SiYoutubeshorts } from "react-icons/si";
 import { FiSearch } from "react-icons/fi";
 import "./header.css";
 import { FaSearch } from "react-icons/fa";
+import { aniDubApi } from "../Api/Api";
 
 function Header() {
   const [data, setData] = useState([]);
@@ -46,7 +47,7 @@ function Header() {
 
   useEffect(() => {
     axios
-      .get("https://a510c4f98367eca1.mokky.dev/aniDub")
+      .get(aniDubApi)
       .then((res) => {
         const filterData = res.data
           .map((item) => {

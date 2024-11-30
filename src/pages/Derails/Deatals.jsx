@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import "../../App.css";
 import VideoPlayer from "./VideoPlayer";
+import { aniDubApi } from "../../Api/Api";
 function Details() {
   const { id } = useParams();
   const [item, setItem] = useState(null);
@@ -12,7 +13,7 @@ function Details() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://a510c4f98367eca1.mokky.dev/aniDub/${id}`)
+      .get(`${aniDubApi}/${id}`)
       .then((res) => {
         setItem(res.data);
         setLoading(false);

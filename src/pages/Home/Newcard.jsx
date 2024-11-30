@@ -4,6 +4,7 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import { CiCircleInfo } from "react-icons/ci";
 import { GoPlay } from "react-icons/go";
 import { Link } from "react-router-dom";
+import { aniDubApi } from "../../Api/Api";
 
 function Newcard() {
   const [data, setData] = useState([]);
@@ -12,7 +13,7 @@ function Newcard() {
 
   useEffect(() => {
     axios
-      .get("https://a510c4f98367eca1.mokky.dev/aniDub")
+      .get(aniDubApi)
       .then((res) => {
         const validData = res.data.filter(
           (item) => item.data && !isNaN(new Date(item.data))
