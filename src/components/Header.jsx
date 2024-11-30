@@ -1,24 +1,47 @@
 import { TbLogin2 } from "react-icons/tb";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import { Drawer } from "antd"; // Import the Drawer component
+import { Drawer } from "antd";
 import "../App.css";
 import { IoChatboxEllipses, IoDuplicate } from "react-icons/io5";
 import { SiYoutubeshorts } from "react-icons/si";
+import { FiSearch } from "react-icons/fi";
+import "./header.css";
+import { FaSearch } from "react-icons/fa";
 
 function Header() {
   const [data, setData] = useState([]);
-  const [hover, setHover] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State for mobile menu
-  const [open, setOpen] = useState(false); // Drawer state
+  const [open, setOpen] = useState(false);
+
+  const [isOpen, setIsOpen] = useState(false);
+  const inputRef = useRef(null);
+  const wrapperRef = useRef(null);
+
+  const toggleSearchInput = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  //inputni yopish
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const showDrawer = () => {
-    setOpen(true); // Open the drawer
+    setOpen(true);
   };
 
   const onClose = () => {
-    setOpen(false); // Close the drawer
+    setOpen(false);
   };
 
   useEffect(() => {
@@ -45,18 +68,25 @@ function Header() {
     <div className="container mt-3">
       {/* Desktop Menu */}
       <ul className="flex gap-10 mx-auto text-white font-semibold items-center justify-between hidden lg:flex">
-        <div className="flex items-center gap-10">
-          <li>
-            <Link to={"/"}>
+        <div className=" flex items-center gap-10">
+          {/* logo */}
+          <Link to="/">
+            <li className="cursor-pointer">
               <img
-                className="w-[140px] h-[40px]"
+                style={{
+                  width: "120px",
+                  height: "37px",
+                  transition: "transform 0.3s ease-in-out",
+                  transformOrigin: "center",
+                  transform: "rotate(0deg)",
+                }}
                 src="https://anilife.vercel.app/static/media/aniDub_logo.68c1d6b51d579e3f658b.png"
                 alt="Logo"
               />
-            </Link>
-          </li>
-
-          <div className="relative cursor-pointer group">
+            </li>
+          </Link>
+          {/* janrlar */}
+          <div className="relative cursor-pointer group ms-10">
             <li className="cursor-pointer text-center flex flex-col items-center">
               <IoDuplicate className="text-[#e96fae] size-[20px] hover:animate-bounce" />
               <span>Janrlar</span>
@@ -77,15 +107,43 @@ function Header() {
               ))}
             </div>
           </div>
+
+          {/* chat */}
           <Link to={"chat"}>
             <li className="cursor-pointer text-center flex flex-col items-center">
               <IoChatboxEllipses className="text-[#e96fae] size-[20px] hover:animate-bounce" />
               <span>Chat</span>
             </li>
           </Link>
+
+          {/* shorts */}
           <li className="cursor-pointer text-center flex flex-col items-center">
             <SiYoutubeshorts className="text-[#e96fae] size-[20px] hover:animate-bounce" />
             <span>Edit</span>
+          </li>
+          <li ref={wrapperRef} className="flex items-center space-x-2 relative">
+            <button
+              onClick={toggleSearchInput}
+              className=" focus:outline-none cursor-pointer text-center flex flex-col items-center transition duration-300 ease-in-out transform "
+            >
+              <FaSearch className="text-[#e96fae] size-[20px] hover:animate-bounce" />
+              <span>Search</span>
+            </button>
+
+            {/* Search Input */}
+            <input
+              ref={inputRef}
+              type="text"
+              placeholder="Izlang..."
+              style={{
+                marginLeft: "70px",
+              }}
+              className={`absolute -mt-2 search-input  left-0 transform focus:outline-none transition-transform duration-300 ${
+                isOpen
+                  ? "translate-x-0 opacity-100"
+                  : "translate-x-full opacity-0"
+              }`}
+            />
           </li>
         </div>
 
@@ -128,7 +186,6 @@ function Header() {
 
       {/* Mobile Menu */}
       <div className="lg:hidden flex justify-between items-center">
-        {/* Logo */}
         <Link to={"/"}>
           <img
             className="w-[140px] h-[40px]"
@@ -137,7 +194,6 @@ function Header() {
           />
         </Link>
 
-        {/* Hamburger Icon */}
         <button onClick={showDrawer} className="text-white text-2xl">
           ☰
         </button>
@@ -145,12 +201,12 @@ function Header() {
 
       {/* Drawer Menu Items */}
       <Drawer
-        placement="left" // Drawer will open from the left side
+        placement="left"
         onClose={onClose}
-        visible={open} // Control visibility
-        width={280} // Drawer width
-        className="z-50 " // Ensure drawer is on top
-        closable={false} // "X" tugmasini olib tashlash
+        visible={open}
+        width={280}
+        className="z-50 "
+        closable={false}
         style={{
           backgroundColor: "rgba(111, 66, 193, 0.1)",
           backdropFilter: "blur(25px)",
@@ -198,6 +254,17 @@ function Header() {
               <span>Edit</span>
             </li>
           </div>
+
+          {/* search */}
+          <li>
+            <input
+              ref={inputRef}
+              type="text"
+              placeholder="Izlang..."
+              className={` search-input  transform focus:outline-none transition-transform duration-300 `}
+            />
+          </li>
+          {/* profil */}
           <li>
             {username ? (
               <Link to={"profil"}>
