@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import "../../App.css";
-
+import VideoPlayer from "./VideoPlayer";
 function Details() {
   const { id } = useParams();
-  const [item, setItem] = useState(null); // Item details state
-  const [loading, setLoading] = useState(true); // Loading state
-  const [activeTab, setActiveTab] = useState("malumot"); // State for active tab
+  const [item, setItem] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState("malumot");
 
   useEffect(() => {
     setLoading(true);
@@ -33,6 +33,18 @@ function Details() {
 
   return (
     <div className=" container mt-4">
+      {/* Detals header */}
+      <div className=" flex justify-between items-start w-[100%]">
+        <div className=" w-[33%]">
+          <h2 className=" text-2xl font-bold">{item.name}</h2>
+          <p>{item.eye}</p>
+          <p>{item.director}</p>
+          <p>{item.data}</p>
+          <p>{item.genre}</p>
+        </div>
+        <VideoPlayer className=" w-[33%]" item={item} />
+      </div>
+      {/* Detals footer */}
       <div className="flex items-center gap-14 font-bold ms-10">
         <button
           className={`cursor-pointer ${
