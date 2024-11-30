@@ -35,15 +35,15 @@
 /* Customize scrollbar for webkit browsers */
 .custom-scrollbar {
   scrollbar-width: thin; /* For Firefox */
-  scrollbar-color: #22c55e transparent; /* For Firefox */
+  scrollbar-color: #47dae4 transparent; /* For Firefox */
 }
 
 .custom-scrollbar::-webkit-scrollbar {
-  width: 10px; /* Set the scrollbar width */
+  width: 3px; /* Set the scrollbar width */
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #22c55e; /* Set the scrollbar thumb color to green */
+  background-color: #47dae4; /* Set the scrollbar thumb color to green */
   border-radius: 5px; /* Make the scrollbar thumb rounded */
 }
 
@@ -100,10 +100,10 @@
 
 .bacgrooundDetals {
   background-color: rgba(
-    84,
-    58,
-    83,
-    0.597
+    32,
+    32,
+    49,
+    0.5
   ); /* Light black background with 50% opacity */
   backdrop-filter: blur(25px); /* Blur effect */
   -webkit-backdrop-filter: blur(25px); /* For Safari */

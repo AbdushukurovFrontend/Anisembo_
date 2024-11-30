@@ -15,11 +15,11 @@ const VideoPlayer = ({ item }) => {
       <div>
         {selectedVideo && (
           <>
-            <div className=" w-[800px]">
+            <div className=" w-[860px]">
               <iframe
                 src={selectedVideo}
                 className=" rounded-lg focus: outline-none"
-                style={{ width: "100%", height: "440px", border: "none" }}
+                style={{ width: "100%", height: "510px", border: "none" }}
               ></iframe>
             </div>
           </>

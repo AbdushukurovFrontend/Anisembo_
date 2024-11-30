@@ -55,7 +55,7 @@ function Details() {
     <div className="">
       <div className="">
         <Header />
-        <div className="container mt-16 ms-2">
+        <div className="container mt-10 ms-2">
           {/* Details Header */}
 
           <div
@@ -65,7 +65,7 @@ function Details() {
               backgroundPosition: "start", // Centers the image within the element
               backgroundRepeat: "no-repeat", // Prevents the image from repeating if it doesn't fill the element
             }}
-            className="flex flex-col lg:flex-row gap-8 mt-6 p-6 shadow-lg rounded-lg"
+            className="flex flex-col lg:flex-row gap-8 mt-6 py-4 px-2 shadow-lg rounded-lg"
           >
             {/* Info Section */}
             <div className="w-full lg:w-[300px] bacgrooundDetals p-4 text-white rounded-lg flex-shrink-0">
