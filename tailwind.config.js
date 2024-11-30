@@ -4,12 +4,12 @@ export default {
     extend: {
       container: {
         padding: {
-          DEFAULT: "16px", // 2rem (default)
-          sm: "16px", // 2rem (for small screens)
-          md: "24px", // 3rem (for medium screens)
-          lg: "32px", // 4rem (for large screens)
-          xl: "40px", // 5rem (for extra large screens)
-          "2xl": "40px", // 5rem (for 2xl screens)
+          DEFAULT: "12px", // 2rem (default)
+          sm: "12px", // 2rem (for small screens)
+          md: "20px", // 3rem (for medium screens)
+          lg: "28px", // 4rem (for large screens)
+          xl: "36px", // 5rem (for extra large screens)
+          "2xl": "36px", // 5rem (for 2xl screens)
         },
       },
     },

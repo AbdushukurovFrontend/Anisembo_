@@ -95,3 +95,18 @@
 .mobile-menu {
   animation: slideFromLeft 0.5s ease-in-out forwards;
 }
+
+/* vedioplayer css */
+
+.bacgrooundDetals {
+  background-color: rgba(
+    84,
+    58,
+    83,
+    0.597
+  ); /* Light black background with 50% opacity */
+  backdrop-filter: blur(25px); /* Blur effect */
+  -webkit-backdrop-filter: blur(25px); /* For Safari */
+  transition: all 0.3s ease; /* Smooth transition */
+  border: none;
+}
