@@ -72,7 +72,7 @@ const Animation = () => {
 
   return (
     <div className=" container">
-      <div className="relative w-full h-[50vh] sm:h-[60vh] md:h-[80vh] lg:h-[90vh] xl:h-[90vh] overflow-hidden">
+      <div className="relative sliderBorder w-full h-[50vh] sm:h-[60vh] md:h-[80vh] lg:h-[90vh] xl:h-[90vh] overflow-hidden">
         {/* Header */}
         <div className="absolute top-0 left-0 w-full z-30">
           <Header />

@@ -3,14 +3,19 @@ export default {
   theme: {
     extend: {
       container: {
-        center: true, // Kontainerni markazlash
-        padding: "1rem", // Har bir tomondan padding qo'shish
+        center: true, // Kontainerni markazlashtiradi
+        padding: {
+          DEFAULT: "1rem", // Har bir tomondan asosiy padding
+          sm: "2rem", // Kichik ekranlar uchun padding
+          lg: "4rem", // Katta ekranlar uchun padding
+          xl: "5rem", // Juda katta ekranlar uchun padding
+        },
         screens: {
-          sm: "640px", // Telefonlar
-          md: "768px", // Planshetlar
-          lg: "1024px", // O'rtacha noutbuklar
-          xl: "1280px", // Katta noutbuklar
-          "2xl": "1536px", // Juda katta ekranlar
+          sm: "100%", // Telefonlar uchun to'liq kenglik
+          md: "100%", // Planshetlar uchun to'liq kenglik
+          lg: "1024px", // Katta noutbuklar uchun kenglik
+          xl: "1280px", // Juda katta ekranlar uchun kenglik
+          "2xl": "1536px", // Juda keng ekranlar uchun kenglik
         },
       },
     },
