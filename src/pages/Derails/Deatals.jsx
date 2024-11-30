@@ -25,7 +25,7 @@ function Details() {
   const [item, setItem] = useState();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [activeTab, setActiveTab] = useState("malumot");
+  const [activeTab, setActiveTab] = useState("izohlar");
 
   useEffect(() => {
     setLoading(true);
@@ -55,7 +55,7 @@ function Details() {
     <div className="">
       <div className="">
         <Header />
-        <div className="container mt-10 ms-2">
+        <div className="container mt-10">
           {/* Details Header */}
 
           <div
@@ -65,7 +65,7 @@ function Details() {
               backgroundPosition: "start", // Centers the image within the element
               backgroundRepeat: "no-repeat", // Prevents the image from repeating if it doesn't fill the element
             }}
-            className="flex flex-col lg:flex-row gap-8 mt-6 py-4 px-2 shadow-lg rounded-lg"
+            className="flex flex-col lg:flex-row gap-4 mt-6 py-4 px-2 shadow-lg rounded-lg"
           >
             {/* Info Section */}
             <div className="w-full lg:w-[300px] bacgrooundDetals p-4 text-white rounded-lg flex-shrink-0">
@@ -106,7 +106,7 @@ function Details() {
 
           {/* Details Footer */}
           <div className="flex items-center gap-14 font-bold mt-6">
-            {["malumot", "izohlar", "kadrlar"].map((tab) => (
+            {["izohlar", "kadrlar"].map((tab) => (
               <button
                 key={tab}
                 className={`cursor-pointer ${
@@ -124,15 +124,6 @@ function Details() {
 
           {/* Tab Content */}
           <div className="content mt-4">
-            {/* Malumot */}
-            {activeTab === "malumot" && (
-              <div>
-                <h2 className="text-xl font-bold">
-                  {item?.title || "Noma'lum"}
-                </h2>
-                <p>{item?.desc || "Ma'lumot mavjud emas."}</p>
-              </div>
-            )}
             {/* Izohlar */}
             {activeTab === "izohlar" && (
               <div>
@@ -142,14 +133,29 @@ function Details() {
             )}
             {/* Kadrlar */}
             {activeTab === "kadrlar" && (
-              <div>
-                <h3 className="text-lg font-bold">Kadrlar:</h3>
-                {item?.img ? (
-                  <img src={item.img} alt="Kadrlar" className="mb-4" />
-                ) : (
-                  <p>Kadrlar mavjud emas.</p>
-                )}
-              </div>
+              <>
+                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 mt-6">
+                  {item?.kadrlar?.[0] ? (
+                    Object.values(item.kadrlar[0]).map((kadr, index) => (
+                      <div
+                        key={index}
+                        className="group relative w-full h-[160px] sm:h-[180px] overflow-hidden rounded-lg shadow-md bg-gray-200"
+                      >
+                        <img
+                          src={kadr}
+                          alt={`Kadrlar ${index + 1}`}
+                          className="w-full h-full object-cover transform group-hover:scale-110 transition duration-500 ease-in-out"
+                        />
+                        <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center"></div>
+                      </div>
+                    ))
+                  ) : (
+                    <p className="text-gray-500 italic col-span-full text-center">
+                      Kadrlar mavjud emas.
+                    </p>
+                  )}
+                </div>
+              </>
             )}
           </div>
         </div>
