@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Drawer } from "antd"; // Import the Drawer component
-import "../../App.css";
+import "../App.css";
 import { IoChatboxEllipses, IoDuplicate } from "react-icons/io5";
 import { SiYoutubeshorts } from "react-icons/si";
 

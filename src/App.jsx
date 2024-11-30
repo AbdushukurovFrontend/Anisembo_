@@ -4,13 +4,13 @@ import {
   useLocation,
 } from "react-router-dom";
 import "./App.css";
-import Login from "./Project/components/Login";
-import Profil from "./Project/components/Profil/Profil";
-import Chat from "./Project/components/Chat";
-import Rotlayout from "./Project/Rotlayout/Rotlayout";
-import Home from "./Project/pages/Home/Home";
-import Allnewcard from "./Project/pages/Home/Allnewcard";
-import Detals from "./Project/pages/Derails/Deatals";
+import Home from "./pages/Home/Home";
+import Allnewcard from "./pages/Home/Allnewcard";
+import Detals from "./pages/Derails/Deatals";
+import Login from "./components/Login";
+import Profil from "./components/Profil/Profil";
+import Rotlayout from "./Rotlayout/Rotlayout";
+import Chat from "./components/Chat";
 
 function App() {
   const router = createBrowserRouter([
