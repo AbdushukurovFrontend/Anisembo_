@@ -35,7 +35,7 @@ function Card() {
   };
 
   return (
-    <div className="container mt-0 mx-auto">
+    <div className="container mt-0  flex flex-col justify-center">
       {/* Card header */}
       <div className="flex justify-between items-center mt-2 mb-5">
         <h2 className="text-xl font-semibold text-gray-800">

@@ -5,7 +5,7 @@ import Newcard from "./Newcard";
 
 function Home() {
   return (
-    <div>
+    <div className=" flex flex-col justify-center">
       {/* <Slider /> */}
       <Newcard />
       <Card />
