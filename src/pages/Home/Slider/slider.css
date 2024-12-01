@@ -10,8 +10,7 @@
   text-overflow: ellipsis;
 }
 
-.watchBtn,
-.watchBtn1 {
+.watchBtn {
   background-color: #e23b91;
   backdrop-filter: blur(25px); /* Blur effect */
   -webkit-backdrop-filter: blur(25px); /* For Safari */
@@ -44,8 +43,6 @@ hr {
   height: 2px;
   background-color: #33ccff;
   width: 100%;
-  margin-top: 4px;
-  margin-bottom: 5px;
 }
 
 .button {
@@ -66,7 +63,6 @@ hr {
 
 .widdf {
   width: 50%;
-  padding-left: 60px;
 }
 
 .premium-button {
@@ -211,7 +207,6 @@ hr {
 @media screen and (max-width: 774px) {
   .widdf {
     width: 60%;
-    padding-left: 22px !important;
     margin-top: 80px;
   }
 
@@ -228,8 +223,6 @@ hr {
   hr {
     height: 2px;
     background-color: #ffffff;
-    margin-top: 5px;
-    margin-bottom: 5px;
   }
 
   .subttile {
@@ -245,13 +238,25 @@ hr {
     font-size: 13px;
   }
   .media {
-    margin-top: 120px !important;
+    margin-top: 200px !important;
   }
 }
 
 @media screen and (max-width: 636px) {
+  .watchBtn {
+    background-color: #e23b91;
+    backdrop-filter: blur(25px); /* Blur effect */
+    -webkit-backdrop-filter: blur(25px); /* For Safari */
+    transition: all 0.3s ease; /* Smooth transition */
+    border: none;
+    width: 110px !important;
+    padding: 8px !important;
+    border-radius: 12px;
+    padding-left: 20px;
+  }
+
   .media {
-    margin-top: 90px !important;
+    margin-top: 140px !important;
   }
 
   .titfd {
@@ -276,12 +281,25 @@ hr {
   }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 390px) {
+  .watchBtn {
+    background-color: #e23b91;
+    backdrop-filter: blur(25px); /* Blur effect */
+    -webkit-backdrop-filter: blur(25px); /* For Safari */
+    transition: all 0.3s ease; /* Smooth transition */
+    border: none;
+    width: 100px !important;
+    padding: 7px !important;
+    border-radius: 12px;
+    padding-left: 15px !important;
+  }
   .media {
-    margin-top: 10px !important;
-    margin-bottom: 90px;
+    margin-top: 150px !important;
   }
 
+  .titfd {
+    font-size: 15px !important;
+  }
   .widdf {
     width: 100%;
   }

@@ -90,13 +90,7 @@ function Header() {
               <Link to="/">
                 <li className="cursor-pointer">
                   <img
-                    style={{
-                      width: "120px",
-                      height: "37px",
-                      transition: "transform 0.3s ease-in-out",
-                      transformOrigin: "center",
-                      transform: "rotate(0deg)",
-                    }}
+                    className=" HeaderLogo"
                     src="https://anilife.vercel.app/static/media/aniDub_logo.68c1d6b51d579e3f658b.png"
                     alt="Logo"
                   />
@@ -105,7 +99,7 @@ function Header() {
               {/* janrlar */}
               <div className="relative cursor-pointer group ms-10">
                 <li className="cursor-pointer text-center flex flex-col items-center">
-                  <IoDuplicate className="text-[#e96fae] size-[20px] hover:animate-bounce" />
+                  <IoDuplicate className="text-[#e96fae] size-[18px] hover:animate-bounce" />
                   <span>Janrlar</span>
                 </li>
                 <div
@@ -128,14 +122,14 @@ function Header() {
               {/* chat */}
               <Link to={"chat"}>
                 <li className="cursor-pointer text-center flex flex-col items-center">
-                  <IoChatboxEllipses className="text-[#e96fae] size-[20px] hover:animate-bounce" />
+                  <IoChatboxEllipses className="text-[#e96fae] size-[18px] hover:animate-bounce" />
                   <span>Chat</span>
                 </li>
               </Link>
 
               {/* shorts */}
               <li className="cursor-pointer text-center flex flex-col items-center">
-                <SiYoutubeshorts className="text-[#e96fae] size-[20px] hover:animate-bounce" />
+                <SiYoutubeshorts className="text-[#e96fae] size-[18px] hover:animate-bounce" />
                 <span>Edit</span>
               </li>
               <li
@@ -146,7 +140,7 @@ function Header() {
                   onClick={toggleSearchInput}
                   className=" focus:outline-none cursor-pointer text-center flex flex-col items-center transition duration-300 ease-in-out transform "
                 >
-                  <FaSearch className="text-[#e96fae] size-[20px] hover:animate-bounce" />
+                  <FaSearch className="text-[#e96fae] size-[18px] hover:animate-bounce" />
                   <span>Search</span>
                 </button>
 

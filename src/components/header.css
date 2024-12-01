@@ -185,4 +185,26 @@ nav {
     background-color: #00000000;
     width: 100% !important;
   }
+
+  .HeaderLogo {
+    width: 10px !important;
+    height: 13px;
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center;
+    transform: rotate(0deg);
+  }
+}
+
+.HeaderLogo {
+  width: 140px;
+  height: 43px;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center;
+  transform: rotate(0deg);
+}
+
+@media screen and (max-width: 390px) {
+  .HeaderLogo {
+    width: 20px !important;
+  }
 }

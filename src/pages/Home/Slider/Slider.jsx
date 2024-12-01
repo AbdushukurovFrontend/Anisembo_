@@ -100,6 +100,9 @@ const Animation = () => {
               }}
             ></div>
 
+            {/* Dark gradient on the left side */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#201f31] to-transparent opacity-60"></div>
+
             {/* Full Slide Darkness Overlay */}
             <div
               className="absolute inset-0 bg-[#201f31] opacity-40"
@@ -107,32 +110,38 @@ const Animation = () => {
             ></div>
 
             {/* Slide Content */}
-            <div className="relative z-10 text-white">
+            <div className="relative z-10 text-white px-4 md:px-12">
               <div className="media">
                 <div className="widdf">
                   <h3 className="titfd text-xl sm:text-2xl md:text-3xl">
                     {slide.name}
                   </h3>
-                  <div className="flex gap-8 mt-6 flex-wrap">
-                    <button className="flex items-center gap-2 text-sm sm:text-base">
+
+                  {/* Date and Time (hidden on mobile) */}
+                  <div className="flex gap-8 mt-6 sm:mt-1 flex-wrap">
+                    <button className="flex items-center gap-2 text-sm sm:text-base ">
                       <CiCalendarDate className="size-[20px]" />
-                      {slide.date}
+                      {slide.data}
                     </button>
-                    <button className="flex items-center gap-2 text-sm sm:text-base">
+                    <button className="flex items-center gap-2 text-sm sm:text-base ">
                       <FaPlayCircle />
                       TV
                     </button>
-                    <button className="flex items-center gap-1 text-sm sm:text-base">
+                    <button className="flex items-center gap-1 text-sm sm:text-base ">
                       <IoTimeSharp className="size-[19px] text-white" />
                       {slide.time}
                     </button>
                   </div>
+
                   <hr className="mt-4" />
-                  <p className="mt-4 font-normal text-white leading-6 tracking-normal subttile text-sm sm:text-base">
+
+                  {/* Description (hidden on mobile) */}
+                  <p className="mt-4 hidden md:block font-normal text-white leading-6 tracking-normal subttile text-sm sm:text-base">
                     {slide.desc}
                   </p>
-                  {/* watch */}
-                  <div className="mt-4 flex items-center gap-10 flex-wrap">
+
+                  {/* Watch Button */}
+                  <div className="mt-4 flex items-center gap-4 sm:gap-1 flex-wrap">
                     <Link to={`details/${slide.id}`}>
                       <button className="flex items-center gap-2 watchBtn">
                         <FaPlayCircle className="transition-transform duration-500 ease-in-out hover:rotate-360" />
@@ -140,8 +149,8 @@ const Animation = () => {
                       </button>
                     </Link>
 
-                    <button className="flex items-center gap-2 watchBtn1 group">
-                      Details{" "}
+                    <button className="flex items-center sm:ms-0 ms-2 gap-2 bacgroountrans p-2 rounded-xl px-4 group">
+                      favorites
                       <FaAngleRight className="group-hover:translate-x-2 transition-transform" />
                     </button>
                   </div>
@@ -156,20 +165,23 @@ const Animation = () => {
           style={{
             flexDirection: "column",
           }}
-          className="absolute bottom-4 right-4 flex gap-2 z-30"
+          className="absolute bottom-4 right-4 flex gap-2 sm:gap-1 z-30"
         >
-          <button
-            onClick={handlePrevSlide}
-            className="bg-gray-600 hidden sm:block bg-opacity-70 text-white p-2 rounded-lg hover:bg-opacity-90"
-          >
-            <FaChevronLeft size={20} />
-          </button>
-          <button
-            onClick={handleNextSlide}
-            className="bg-gray-600 hidden sm:block bg-opacity-70 text-white p-2 rounded-lg hover:bg-opacity-90"
-          >
-            <FaChevronRight size={20} />
-          </button>
+          {/* Visible only on medium and large screens */}
+          <div className="sm:flex hidden flex-col justify-center items-center gap-2">
+            <button
+              onClick={handlePrevSlide}
+              className="bg-gray-600  bg-opacity-70 text-white p-2 rounded-lg hover:bg-opacity-90"
+            >
+              <FaChevronLeft size={20} />
+            </button>
+            <button
+              onClick={handleNextSlide}
+              className="bg-gray-600  bg-opacity-70 text-white p-2 rounded-lg hover:bg-opacity-90"
+            >
+              <FaChevronRight size={20} />
+            </button>
+          </div>
         </div>
       </div>
     </div>
