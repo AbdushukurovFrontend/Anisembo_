@@ -28,18 +28,6 @@
   border-radius: 10px;
 }
 
-.sliderBackground {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    rgb(32, 31, 49) 0%,
-    rgba(255, 255, 255, 0.1) 50%,
-    rgb(32, 31, 49) 100%
-  );
-  z-index: -1;
-}
-
 .watchBtn,
 .watchBtn1 {
   background-color: #e23b91;
