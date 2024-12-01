@@ -13,7 +13,8 @@ import Header from "../../../components/Header";
 import { IoTimeOutline, IoTimeSharp } from "react-icons/io5";
 import { CiCalendarDate } from "react-icons/ci";
 import Skeleton from "react-loading-skeleton";
-import { sliderApi } from "../../../Api/Api";
+import { aniDubApi } from "../../../Api/Api";
+import { Link } from "react-router-dom";
 
 const Animation = () => {
   const [slides, setSlides] = useState([]);
@@ -22,7 +23,7 @@ const Animation = () => {
 
   useEffect(() => {
     axios
-      .get(sliderApi)
+      .get(aniDubApi)
       .then((res) => {
         const menu = res.data;
         setSlides(menu || []);
@@ -127,10 +128,12 @@ const Animation = () => {
                   </p>
                   {/* watch */}
                   <div className="mt-4 flex items-center gap-10 flex-wrap">
-                    <button className="flex items-center gap-2 watchBtn">
-                      <FaPlayCircle className="transition-transform duration-500 ease-in-out hover:rotate-360" />
-                      Ko'rish
-                    </button>
+                    <Link to={`details/${slide.id}`}>
+                      <button className="flex items-center gap-2 watchBtn">
+                        <FaPlayCircle className="transition-transform duration-500 ease-in-out hover:rotate-360" />
+                        Ko'rish
+                      </button>
+                    </Link>
 
                     <button className="flex items-center gap-2 watchBtn1 group">
                       Details{" "}

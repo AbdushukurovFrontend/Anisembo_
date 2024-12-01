@@ -60,7 +60,7 @@ function Details() {
 
           <div
             style={{
-              backgroundImage: `url(${item.img})`,
+              backgroundImage: `url(${item.bacgroundImg})`,
               backgroundSize: "cover", // Ensures the image covers the element without distorting
               backgroundPosition: "start", // Centers the image within the element
               backgroundRepeat: "no-repeat", // Prevents the image from repeating if it doesn't fill the element
@@ -135,15 +135,15 @@ function Details() {
             {activeTab === "kadrlar" && (
               <>
                 <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 mt-6">
-                  {item?.kadrlar?.[0] ? (
-                    Object.values(item.kadrlar[0]).map((kadr, index) => (
+                  {item?.episode?.[0] ? (
+                    Object.values(item.episode[0]).map((epi, index) => (
                       <div
                         key={index}
                         className="group relative w-full h-[160px] sm:h-[180px] overflow-hidden rounded-lg shadow-md bg-gray-200"
                       >
                         <img
-                          src={kadr}
-                          alt={`Kadrlar ${index + 1}`}
+                          src={epi}
+                          alt={`episode ${index + 1}`}
                           className="w-full h-full object-cover transform group-hover:scale-110 transition duration-500 ease-in-out"
                         />
                         <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center"></div>
@@ -151,7 +151,7 @@ function Details() {
                     ))
                   ) : (
                     <p className="text-gray-500 italic col-span-full text-center">
-                      Kadrlar mavjud emas.
+                      Epizodlar mavjud emas.
                     </p>
                   )}
                 </div>
