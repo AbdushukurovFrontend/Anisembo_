@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { IoIosExit } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"; // Import the default styles
+import "react-toastify/dist/ReactToastify.css";
+import exit from "../Img/exit.png";
 
 function Login() {
   const [name, setName] = useState("");
@@ -60,26 +61,17 @@ function Login() {
   };
 
   return (
-    <div className="w-full h-screen flex flex-col md:flex-row bacgorunG relative">
+    <div className="w-full h-screen flex justify-center flex-col md:flex-row bacgorunG relative">
       {/* Close Button (Top right corner) */}
       <button
         onClick={handleClose}
         className="absolute top-4 right-4 text-[50px] z-10"
       >
-        <IoIosExit />
+        <img className=" size-10" src={exit} />
       </button>
 
-      {/* GIF (Top half) */}
-      <div className="w-full md:w-1/2 h-1/2 md:h-full relative z-0">
-        {/* <img
-          className="w-full h-full object-cover"
-          src="https://anilife.vercel.app/static/media/vedio.d1a1d71b52d92096f352.gif"
-          alt="Login Animation"
-        /> */}
-      </div>
-
       {/* Login Form (Bottom half or right side) */}
-      <div className="w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center backdrop-blur-sm p-4 md:p-8 rounded-lg shadow-lg">
+      <div className="w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center p-4 md:p-8 rounded-lg shadow-lg">
         <div className="w-full max-w-md">
           {regs ? (
             <>
