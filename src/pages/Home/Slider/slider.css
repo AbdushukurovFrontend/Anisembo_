@@ -10,24 +10,6 @@
   text-overflow: ellipsis;
 }
 
-.sliderBorder {
-  background: linear-gradient(
-    to right,
-    rgb(32, 31, 49) 0%,
-    rgba(255, 255, 255, 0.1) 50%,
-    rgb(32, 31, 49) 100%
-  );
-  border: 5px solid transparent;
-  border-image: linear-gradient(
-    to right,
-    rgb(32, 31, 49),
-    rgba(255, 255, 255, 0.3),
-    rgb(32, 31, 49)
-  );
-  border-image-slice: 1;
-  border-radius: 10px;
-}
-
 .watchBtn,
 .watchBtn1 {
   background-color: #e23b91;

@@ -152,13 +152,13 @@ const Animation = () => {
         >
           <button
             onClick={handlePrevSlide}
-            className="bg-gray-600 bg-opacity-70 text-white p-2 rounded-lg hover:bg-opacity-90"
+            className="bg-gray-600 hidden sm:block bg-opacity-70 text-white p-2 rounded-lg hover:bg-opacity-90"
           >
             <FaChevronLeft size={20} />
           </button>
           <button
             onClick={handleNextSlide}
-            className="bg-gray-600 bg-opacity-70 text-white p-2 rounded-lg hover:bg-opacity-90"
+            className="bg-gray-600 hidden sm:block bg-opacity-70 text-white p-2 rounded-lg hover:bg-opacity-90"
           >
             <FaChevronRight size={20} />
           </button>

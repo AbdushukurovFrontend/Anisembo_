@@ -24,8 +24,9 @@ nav {
   width: 220px;
   padding: 8px 20px;
   border-radius: 18px;
-  background-color: #fff;
-  color: #000;
+  background: rgba(0, 0, 0, 0.464);
+
+  color: #ffffff;
   box-shadow: inset 0px 4px 6px rgba(0, 0, 0, 0.2),
     0px 8px 15px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
