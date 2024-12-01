@@ -4,6 +4,21 @@ nav {
   z-index: 20;
 }
 
+.hoberBgHeader {
+  background-color: rgba(
+    111,
+    66,
+    193,
+    0.1
+  ); /* Light black background with 50% opacity */
+  backdrop-filter: blur(25px); /* Blur effect */
+  -webkit-backdrop-filter: blur(25px); /* For Safari */
+  transition: all 0.3s ease; /* Smooth transition */
+  border: none;
+  padding-bottom: 10px;
+  border-radius: 3px;
+}
+
 .respons {
   display: flex;
   align-items: center;
