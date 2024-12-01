@@ -64,7 +64,7 @@ function Login() {
       {/* Close Button (Top right corner) */}
       <button
         onClick={handleClose}
-        className="absolute top-4 right-4 text-white text-3xl z-10"
+        className="absolute top-4 right-4 text-[50px] z-10"
       >
         <IoIosExit />
       </button>
@@ -79,7 +79,7 @@ function Login() {
       </div>
 
       {/* Login Form (Bottom half or right side) */}
-      <div className="w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center bg-white p-4 md:p-8 rounded-lg shadow-lg">
+      <div className="w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center backdrop-blur-sm p-4 md:p-8 rounded-lg shadow-lg">
         <div className="w-full max-w-md">
           {regs ? (
             <>
@@ -87,13 +87,13 @@ function Login() {
                 className="w-full flex flex-col gap-6"
                 onSubmit={handleLogin}
               >
-                <h2 className="text-3xl font-bold text-center text-teal-600">
+                <h2 className="text-3xl font-bold text-center text-blue-300">
                   Tizimga kirish
                 </h2>
                 <input
                   type="text"
                   name="name"
-                  className="p-4 border-2 border-teal-500 bg-gray-50 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all"
+                  className="p-4 border-none font-mono bg-gray-50 rounded-xl text-black placeholder:text-zinc-400 focus:placeholder:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Foydalanuvchi nomi"
@@ -101,7 +101,7 @@ function Login() {
                 <input
                   type="password"
                   name="password"
-                  className="p-4 border-2 border-teal-500 bg-gray-50 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all"
+                  className="p-4 border-none font-mono bg-gray-50 rounded-xl text-black focus:outline-none focus:placeholder:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Parolingizni kiriting..."
@@ -109,7 +109,7 @@ function Login() {
                 <input
                   type="password"
                   name="password"
-                  className="p-4 border-2 border-teal-500 bg-gray-50 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all"
+                  className="p-4 border-none font-mono bg-gray-50 rounded-xl text-black focus:outline-none focus:ring-2 focus:placeholder:text-white focus:ring-blue-500 focus:border-blue-500 transition-all"
                   value={repaitpassword}
                   onChange={(e) => setrepaitpassword(e.target.value)}
                   placeholder="Parolingizni qayta kiriting..."
@@ -117,14 +117,16 @@ function Login() {
                 <button
                   onClick={handleRegister}
                   type="submit"
-                  className="bg-teal-600 text-white py-2 rounded hover:bg-teal-700 transition-all"
+                  className="hover:bg-blue-950 w-full text-white rounded-xl p-4 bg-blue-400 hover:text-white transition-all "
                 >
                   Ro'yxatdan o'tish
                 </button>
-                <div className="text-center mt-4">
-                  <span className="text-teal-400">Hisobingiz bormi? </span>
+                <div className="flex justify-between">
+                  <span className="text-blue-200 text-[16px] font-mono">
+                    Hisobingiz bormi?{" "}
+                  </span>
                   <span
-                    className="cursor-pointer text-teal-600 hover:underline"
+                    className="cursor-pointer text-[16px] font-mono text-blue-200 hover:underline"
                     onClick={handleRegistir}
                   >
                     Tizimga kirish
@@ -139,13 +141,13 @@ function Login() {
                 className="w-full flex flex-col gap-6"
                 onSubmit={handleLogin}
               >
-                <h2 className="text-3xl font-bold text-center text-teal-600">
+                <h2 className="text-3xl font-bold text-center font-mono text-blue-300">
                   Tizimga kirish
                 </h2>
                 <input
                   type="text"
                   name="name"
-                  className="p-4 border-2 border-teal-500 bg-gray-50 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all"
+                  className="p-4 border-none bg-gray-50 rounded-xl text-black focus:outline-none font-mono focus:placeholder:text-white placeholder:font-mono placeholder:text-zinc-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Foydalanuvchi nomi"
@@ -153,21 +155,25 @@ function Login() {
                 <input
                   type="password"
                   name="password"
-                  className="p-4 border-2 border-teal-500 bg-gray-50 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all"
+                  className="p-4 border-none bg-gray-50 rounded-xl text-black focus:outline-none font-mono focus:placeholder:text-white focus:ring-2 focus:ring-blue-500 placeholder:font-mono placeholder:text-zinc-400 focus:border-blue-500 transition-all"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Parolingizni kiriting"
                 />
-                <button
-                  type="submit"
-                  className="bg-teal-600 text-white py-2 rounded hover:bg-teal-700 transition-all"
-                >
-                  Tizimga kirish
-                </button>
-                <div className="text-center mt-4">
-                  <span className="text-teal-400">Hisobingiz yo'qmi? </span>
+                <div className="w-full text-center mt-8">
+                  <button
+                    type="submit"
+                    className="hover:bg-blue-950 w-full text-white rounded-xl p-4 bg-blue-400 hover:text-white transition-all "
+                  >
+                    Tizimga kirish
+                  </button>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-blue-200 text-[16px] font-mono">
+                    Hisobingiz yo'qmi?{" "}
+                  </span>
                   <span
-                    className="cursor-pointer text-teal-600 hover:underline"
+                    className="cursor-pointer text-[16px] font-mono text-blue-200 hover:underline"
                     onClick={handleRegistir}
                   >
                     Ro'yxatdan o'tish
@@ -178,6 +184,7 @@ function Login() {
           )}
         </div>
       </div>
+      {/* Login page almost done /// */}
 
       {/* Toast Container */}
       <ToastContainer />
