@@ -12,10 +12,14 @@ function Login() {
   const [repaitpassword, setrepaitpassword] = useState("");
   const [isValid, setIsValid] = useState(false);
   const [regs, setregs] = useState(false);
-
+  const [passwods, setPasswods] = useState(false);
   const navigate = useNavigate();
   const userName = localStorage.getItem("name");
   const userPassword = localStorage.getItem("password");
+
+  const passwordShow = () => {
+    setPasswods((prev) => !prev);
+  };
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -83,7 +87,7 @@ function Login() {
               >
                 <div className="relative w-full flex justify-center mb-6">
                   <span className="absolute top-[-180px] flex items-center font-bold font-mono">
-                    <FaUserCircle className="text-[190px] text-slate-500" />
+                    <FaUserCircle className="text-[160px] text-slate-500" />
                   </span>
                 </div>
                 <div className="relative w-full">
@@ -188,22 +192,29 @@ function Login() {
                 </div>
 
                 <div className="relative w-full">
-                  <span className="absolute inset-y-0 right-4 flex items-center text-gray-400">
-                    <FaRegEyeSlash />
+                  {/* Ko'z ikonkasiga bosilganda parolni ko'rsatish/yashirish */}
+                  <span
+                    className="absolute inset-y-0 right-4 flex items-center text-gray-400 cursor-pointer"
+                    onClick={passwordShow}
+                  >
+                    {passwods ? <FaRegEyeSlash /> : <FaRegEyeSlash />}{" "}
+                    {/* Ko'z ikonkasi */}
                   </span>
+                  {/* Lock ikonkasi */}
                   <span className="absolute inset-y-0 left-4 flex items-center text-gray-400">
                     <FaLock />
                   </span>
+                  {/* Input */}
                   <input
-                    type="password"
+                    type={passwods ? "text" : "password"} // Agar parol ko'rsatilsa, turi 'text' bo'ladi
                     name="password"
-                    className="w-full pl-12 p-4 border-none backdrop-blur-lg bg-cyan-50/25 text-white rounded-xl focus:outline-none font-mono focus:placeholder:text-gray-50/0
-                   placeholder:font-sans placeholder:tracking-widest placeholder:text-stone-300 focus:ring-2 focus:ring-cyan-500 transition-all"
+                    className="w-full pl-12 p-4 border-none backdrop-blur-lg bg-cyan-50/25 text-white rounded-xl focus:outline-none font-mono focus:placeholder:text-gray-50/0 placeholder:font-sans placeholder:tracking-widest placeholder:text-stone-300 focus:ring-2 focus:ring-cyan-500 transition-all"
                     value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    onChange={(e) => setPassword(e.target.value)} // Parolni o'zgartirish
                     placeholder="Parolingizni kiriting"
                   />
                 </div>
+
                 <div className="w-full text-center mt-4">
                   <button
                     type="submit"
