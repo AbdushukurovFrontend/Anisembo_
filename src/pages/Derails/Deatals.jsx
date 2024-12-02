@@ -49,11 +49,11 @@ function Details() {
     return (
       <div className=" container">
         <div className="flex justify-between items-center mb-4">
-          <Skeleton />
-          <Skeleton.Button active shape="round" size="large" />
+          <Skeleton rows={4} />
+          <Skeleton rows={4} />
+          <Skeleton rows={4} />
+          <Skeleton rows={4} />
         </div>
-        <Skeleton.Image active className="w-full h-[200px]" />
-        <Skeleton active paragraph={{ rows: 4 }} className="mt-4" />
       </div>
     );
   }
