@@ -77,7 +77,7 @@ function Login() {
       </button>
 
       {/* Login Form (Bottom half or right side) */}
-      <div className="w-[50%] h-[94%] xl:h-[82%] xl:w-[50%] backdrop-blur-lg flex items-center justify-center p-4 md:p-8 rounded-3xl shadow-lg">
+      <div className="w-[50%] h-[94%] lg:h-[82%] lg:w-[50%] backdrop-blur-lg pt-10 flex items-center justify-center p-4 md:p-8 rounded-3xl shadow-lg">
         <div className="w-full max-w-md">
           {regs ? (
             <>
@@ -86,8 +86,8 @@ function Login() {
                 onSubmit={handleLogin}
               >
                 <div className="relative w-full flex justify-center mb-6">
-                  <span className="absolute top-[-180px] flex items-center font-bold font-mono">
-                    <FaUserCircle className="text-[160px] text-slate-500" />
+                  <span className="absolute top-[-100px] flex items-center font-bold font-mono">
+                    <FaUserCircle className="text-3xl text-slate-500" />
                   </span>
                 </div>
                 <div className="relative w-full">
@@ -169,8 +169,8 @@ function Login() {
                 onSubmit={handleLogin}
               >
                 <div className="relative w-full flex justify-center mb-6">
-                  <span className="absolute top-[-180px] flex items-center font-bold font-mono">
-                    <FaUserCircle className="text-[190px] text-slate-500" />
+                  <span className="absolute top-[-150px] flex items-center font-bold font-mono">
+                    <FaUserCircle className="text-[180px] text-slate-500" />
                   </span>
                 </div>
 
