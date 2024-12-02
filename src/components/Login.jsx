@@ -4,6 +4,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import exit from "../Img/exit.png";
 import { IoIosLogOut } from "react-icons/io";
+import { FaLock, FaRegEyeSlash, FaUser, FaUserCircle } from "react-icons/fa";
 
 function Login() {
   const [name, setName] = useState("");
@@ -71,7 +72,7 @@ function Login() {
       </button>
 
       {/* Login Form (Bottom half or right side) */}
-      <div className="w-[40%]  h-[65%] backdrop-blur-lg flex items-center justify-center p-4 md:p-8 rounded-3xl shadow-lg">
+      <div className="w-[50%]  h-[90%] backdrop-blur-lg flex items-center justify-center p-4 md:p-8 rounded-3xl shadow-lg">
         <div className="w-full max-w-md">
           {regs ? (
             <>
@@ -79,46 +80,75 @@ function Login() {
                 className="w-full flex flex-col gap-6"
                 onSubmit={handleLogin}
               >
-                <h2 className="text-3xl font-bold text-center text-blue-500">
-                  Tizimga kirish
-                </h2>
-                <input
-                  type="text"
-                  name="name"
-                  className="p-4 border-none font-mono bg-gray-50 rounded-xl text-black placeholder:text-zinc-400 focus:placeholder:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="Foydalanuvchi nomi"
-                />
-                <input
-                  type="password"
-                  name="password"
-                  className="p-4 border-none font-mono bg-gray-50 rounded-xl text-black focus:outline-none focus:placeholder:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Parolingizni kiriting..."
-                />
-                <input
-                  type="password"
-                  name="password"
-                  className="p-4 border-none font-mono bg-gray-50 rounded-xl text-black focus:outline-none focus:ring-2 focus:placeholder:text-white focus:ring-blue-500 focus:border-blue-500 transition-all"
-                  value={repaitpassword}
-                  onChange={(e) => setrepaitpassword(e.target.value)}
-                  placeholder="Parolingizni qayta kiriting..."
-                />
+                <div className="relative w-full flex justify-center mb-6">
+                  <span className="absolute top-[-180px] flex items-center font-bold font-mono">
+                    <FaUserCircle className="text-[190px] text-slate-500" />
+                  </span>
+                </div>
+                <div className="relative w-full">
+                  {/* Ikona */}
+                  <span className="absolute inset-y-0 left-4 flex items-center text-gray-400">
+                    <FaUser />
+                  </span>
+                  <input
+                    type="text"
+                    name="name"
+                    className="w-full pl-12 p-4 border-none backdrop-blur-lg bg-cyan-50/25 text-white rounded-xl focus:outline-none font-mono focus:placeholder:text-gray-50/0
+                   placeholder:font-sans placeholder:tracking-widest placeholder:text-stone-300 focus:ring-2 focus:ring-cyan-500 transition-all"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Foydalanuvchi nomi"
+                  />
+                </div>
+                <div className="relative w-full">
+                  {/* Ikona */}
+                  <span className="absolute inset-y-0 left-4 flex items-center text-gray-400">
+                    <FaLock />
+                  </span>
+                  <span className="absolute inset-y-0 right-4 flex items-center text-gray-400">
+                    <FaRegEyeSlash />
+                  </span>
+                  <input
+                    type="password"
+                    name="password"
+                    className="w-full pl-12 p-4 border-none backdrop-blur-lg bg-cyan-50/25 text-white rounded-xl focus:outline-none font-mono focus:placeholder:text-gray-50/0
+                   placeholder:font-sans placeholder:tracking-widest placeholder:text-stone-300 focus:ring-2 focus:ring-cyan-500 transition-all"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Parolingizni kiriting..."
+                  />
+                </div>
+                <div className="relative w-full">
+                  {/* Ikona */}
+                  <span className="absolute inset-y-0 left-4 flex items-center text-gray-400">
+                    <FaLock />
+                  </span>
+                  <span className="absolute inset-y-0 right-4 flex items-center text-gray-400">
+                    <FaRegEyeSlash />
+                  </span>
+                  <input
+                    type="password"
+                    name="password"
+                    className="w-full pl-12 p-4 border-none backdrop-blur-lg bg-cyan-50/25 text-white rounded-xl focus:outline-none font-mono focus:placeholder:text-gray-50/0
+                   placeholder:font-sans placeholder:tracking-widest placeholder:text-stone-300 focus:ring-2 focus:ring-cyan-500 transition-all"
+                    value={repaitpassword}
+                    onChange={(e) => setrepaitpassword(e.target.value)}
+                    placeholder="Parolingizni qayta kiriting..."
+                  />
+                </div>
                 <button
                   onClick={handleRegister}
                   type="submit"
-                  className="hover:bg-blue-950 w-full text-white rounded-xl p-4 bg-blue-400 hover:text-white transition-all "
+                  className="w-full bg-slate-50/40 text-white hover:bg-slate-50/40 hover:text-slate-100 font-semibold font-sans tracking-widest rounded-xl p-4 transition-all "
                 >
                   Ro'yxatdan o'tish
                 </button>
                 <div className="flex justify-between">
-                  <span className="text-blue-200 text-[16px] font-mono">
+                  <span className="text-stone-300 text-[15px] tracking-wider font-mono">
                     Hisobingiz bormi?{" "}
                   </span>
                   <span
-                    className="cursor-pointer text-[16px] font-mono text-blue-200 hover:underline"
+                    className="cursor-pointer text-[15px] font-mono tracking-wider text-stone-300 hover:underline"
                     onClick={handleRegistir}
                   >
                     Tizimga kirish
@@ -130,45 +160,63 @@ function Login() {
             <>
               {/* Login Form */}
               <form
-                className="w-full flex flex-col gap-6"
+                className="w-[100%] flex flex-col gap-6"
                 onSubmit={handleLogin}
               >
-                <h2 className="text-3xl font-bold text-center font-mono text-cyan-500">
-                  Tizimga kirish
-                </h2>
-                <input
-                  type="text"
-                  name="name"
-                  className="p-4 border-none backdrop-blur-lg bg-cyan-50/25 text-white rounded-xl focus:outline-none font-mono focus:placeholder:text-gray-50/0
-                   placeholder:font-mono placeholder:text-zinc-200 focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="Foydalanuvchi nomi"
-                />
+                <div className="relative w-full flex justify-center mb-6">
+                  <span className="absolute top-[-180px] flex items-center font-bold font-mono">
+                    <FaUserCircle className="text-[190px] text-slate-500" />
+                  </span>
+                </div>
 
-                <input
-                  type="password"
-                  name="password"
-                  className="p-4 border-none backdrop-blur-lg bg-cyan-50/25 text-white rounded-xl focus:outline-none font-mono focus:placeholder:text-gray-50/0
-                   placeholder:font-mono placeholder:text-zinc-200 focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Parolingizni kiriting"
-                />
-                <div className="w-full text-center mt-8">
+                <div className="relative w-full">
+                  {/* Ikona */}
+                  <span className="absolute inset-y-0 left-4 flex items-center text-gray-400">
+                    <FaUser />
+                  </span>
+                  {/* Input */}
+                  <input
+                    type="text"
+                    name="name"
+                    className="w-full pl-12 p-4 border-none backdrop-blur-lg bg-cyan-50/25 text-white rounded-xl focus:outline-none font-mono focus:placeholder:text-gray-50/0
+                   placeholder:font-sans placeholder:tracking-widest placeholder:text-stone-300 focus:ring-2 focus:ring-cyan-500 transition-all"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Foydalanuvchi nomi"
+                  />
+                </div>
+
+                <div className="relative w-full">
+                  <span className="absolute inset-y-0 right-4 flex items-center text-gray-400">
+                    <FaRegEyeSlash />
+                  </span>
+                  <span className="absolute inset-y-0 left-4 flex items-center text-gray-400">
+                    <FaLock />
+                  </span>
+                  <input
+                    type="password"
+                    name="password"
+                    className="w-full pl-12 p-4 border-none backdrop-blur-lg bg-cyan-50/25 text-white rounded-xl focus:outline-none font-mono focus:placeholder:text-gray-50/0
+                   placeholder:font-sans placeholder:tracking-widest placeholder:text-stone-300 focus:ring-2 focus:ring-cyan-500 transition-all"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Parolingizni kiriting"
+                  />
+                </div>
+                <div className="w-full text-center mt-4">
                   <button
                     type="submit"
-                    className="hover:bg-blue-950 w-full text-white-800 font-semibold font-mono rounded-xl p-4 hover:text-white transition-all "
+                    className="w-full bg-slate-50/40 text-white hover:bg-slate-50/40 hover:text-slate-100 font-semibold font-sans tracking-widest rounded-xl p-4 transition-all "
                   >
                     Tizimga kirish
                   </button>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-cyan-200 text-[16px] font-mono">
-                    Hisobingiz yo'qmi?{" "}
+                  <span className="text-stone-300 text-[15px] tracking-wider font-mono">
+                    Hisobingiz yo'qmi?
                   </span>
                   <span
-                    className="cursor-pointer text-[16px] font-mono text-cyan-200 hover:underline"
+                    className="cursor-pointer text-[15px] font-mono tracking-wider text-stone-300 hover:underline"
                     onClick={handleRegistir}
                   >
                     Ro'yxatdan o'tish
