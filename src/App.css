@@ -5,15 +5,80 @@
   border-radius: 5px;
 }
 
-.bacgorunG {
+/* Background Image */
+.bg-image-container {
   background-image: url("https://anilife.vercel.app/static/media/vedio.d1a1d71b52d92096f352.gif");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 5px;
-  width: 100%;
-  height: 100vh;
+  height: 100vh; /* Full viewport height */
 }
+
+/* Form Container */
+.form-container {
+  /* background-color: #1f2937; */
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Input Fields */
+.input-field {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: #fbfdff2c;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.input-field:focus {
+  outline: 2px solid #2563eb;
+}
+
+/* Button Styles */
+.btn-primary {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #ef4444;
+  color: white;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #dc2626;
+}
+
+/* Responsiv */
+/* @media (min-width: 1024px) {
+  .lg\:w-7\/10 {
+    flex-basis: 70%;
+  }
+
+  .lg\:w-3\/10 {
+    flex-basis: 30%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .bg-image-container {
+    height: 40vh;
+  }
+
+  .form-container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+} */
 
 /* new card css */
 
@@ -193,4 +258,20 @@
     opacity: 1;
     transform: translateY(0px);
   }
+}
+
+/* login css */
+
+.loginBacgroun {
+  background-color: rgba(
+    69,
+    34,
+    121,
+    0.322
+  ); /* Light black background with 50% opacity */
+  backdrop-filter: blur(25px); /* Blur effect */
+  -webkit-backdrop-filter: blur(25px); /* For Safari */
+  transition: all 0.3s ease; /* Smooth transition */
+  border: none;
+  padding: 20px !important;
 }
