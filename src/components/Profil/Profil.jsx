@@ -16,10 +16,17 @@ function Profil() {
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible); // Toggle the password visibility
   };
+
   const userImg =
     localStorage.getItem("userImg") ||
     "https://www.shutterstock.com/image-vector/blank-avatar-photo-place-holder-600nw-1095249842.jpg";
+
   const userName = localStorage.getItem("name");
+
+  const userBackgroundImg =
+    localStorage.getItem("backgroundimg") ||
+    "https://img.freepik.com/free-photo/beautiful-anime-character-cartoon-scene_23-2151035176.jpg";
+
   const userPassword = localStorage.getItem("password");
 
   useEffect(() => {
@@ -37,14 +44,34 @@ function Profil() {
     <div>
       <div className="container">
         {/* Profil header */}
-
+        <div
+          className="relative"
+          style={{
+            backgroundImage: `url(${userBackgroundImg})`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            height: "50vh",
+          }}
+        >
+          <div className="absolute bottom-0 left-0">
+            <div className="flex justify-center items-center">
+              <img
+                src={userDefaultimg}
+                alt="userDefaultimg"
+                className="rounded-full w-[120px] h-[120px] object-cover"
+              />
+              <p className="text-[25px]">{userName}</p>
+            </div>
+          </div>
+        </div>
+        {/* Profil content */}
         <div className="flex space-x-4 mb-4 mt-10">
           {/* Add space between buttons */}
           {["profil", "sevimlilar", "galeriya"].map((tab) => {
             return (
               <button
                 key={tab}
-                className={`cursor-pointer px-4 py-2 transition-all duration-500 relative inline-block uppercase text-decoration-none rounded-full transform transition-all ease-in-out ${
+                className={`cursor-pointer px-4 py-2 duration-500 relative inline-block uppercase text-decoration-none rounded-full transform transition-all ease-in-out ${
                   activTab === tab
                     ? "btn-white activeTabSty"
                     : "btn-white activeTabdefault"
@@ -59,9 +86,8 @@ function Profil() {
         </div>
         <hr />
 
-        {/* Profil content */}
         {activTab === "profil" && (
-          <div className="mt-4">
+          <div className="mt-4 flex justify-start gap-3">
             <div className="flex items-center gap-8 flex-wrap">
               {/* User Image Section */}
               <div className="relative">
@@ -81,12 +107,12 @@ function Profil() {
               </div>
 
               {/* User Info Section */}
-              <div className="w-[400px] rounded-lg p-6 h-[250px] shadow-xl">
+              <div className="w-[400px] rounded-lg p-6 h-[250px] bg-gradient-to-r from-sky-500 to-blue-500 shadow-xl">
                 <button className="bacgrooundDetals p-2 bg-white shadow-md rounded-lg w-[350px] text-black text-start px-3">
                   <h2 className="font-semibold">{userName}</h2>
                 </button>
-                <div className="flex items-center mt-4">
-                  <p className="text-md font-medium mr-3 relative p-2 bg-white shadow-md rounded-lg w-[350px] text-black text-start px-3">
+                <div className="flex items-center mt-4 p-3 relative w-full bg-white rounded-lg">
+                  <p className="text-md font-medium mr-3 shadow-md text-black text-start">
                     {passwordVisible
                       ? userPassword
                       : "•".repeat(userPassword.length)}
@@ -96,7 +122,7 @@ function Profil() {
                   {/* Eye Icon for toggling password visibility */}
                   <button
                     onClick={togglePasswordVisibility}
-                    className="text-gray-400 hover:text-gray-600 transition-colors duration-300"
+                    className="text-gray-500 absolute right-0 hover:text-gray-600 m-4 transition-colors duration-300"
                   >
                     {passwordVisible ? (
                       <FaEyeSlash size={22} />
@@ -131,8 +157,19 @@ function Profil() {
 
         {/* Galeriya content */}
         {activTab === "galeriya" && (
-          <div className="mt-4">
-            <div>Galeriya</div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 mt-4">
+            {[
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMdouSC-MNcjgiSzrlhQP_c4beyoKfTKO561uMpUT6ksbx5EF2oVWeBDS576KjKPy4qgg&usqp=CAU",
+              "",
+            ].map((item) => (
+              <div className="p-4">
+                <img
+                  src=""
+                  alt=""
+                  className="rounded-lg w-[150px] h-[200px] "
+                />
+              </div>
+            ))}
           </div>
         )}
       </div>

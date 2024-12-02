@@ -194,3 +194,14 @@
     transform: translateY(0px);
   }
 }
+
+/* Profil background */
+
+.back {
+  background-image: url("https://s3-alpha-sig.figma.com/img/2dec/0e9a/e2367b8a77e499c8ca9891bc2dfc5933?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=NHMKAgvKjxoMKl9sSHPHXLn8ac7ZSC72Rvkw5aDggpLam2Mo0Z~tmm5a1Tg-imxXqEcN1kVua3f8FyQigECKms4shETvdQsRoqBETAfA4RhUpyLQikJRyEf-zcbBZBfZFqgzUtcoNGzS~pdDhcJrvUp3VMyDl9BJX1TWJU5yr9WHMFTxTCsSMZAj-WFuLj4QzK4P5e1xSVNZZiV8uBoH8BjgkrHZWCzNdG4d1IKcTJzvtKZ4EmJ9BOEUdotpvQtCp3ndio1i4106EV3ZVxWDyKJDshJMc9qmfwFRxODAc~y0jomMYzC~3hvGX8P6zpzeTDaqq6emGWpQXvewz0sIMA__");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 50vh;
+}
