@@ -60,6 +60,7 @@ function Login() {
   const handleClose = () => {
     navigate("/"); // or navigate to a specific route or close the modal
   };
+  // login with password
 
   return (
     <div className="w-full h-screen flex justify-center items-center flex-col md:flex-row bacgorunG relative">
