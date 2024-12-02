@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -6,6 +6,8 @@ import { FaUser, FaLock, FaEye, FaEyeSlash } from "react-icons/fa"; // Icons
 import "../App.css";
 import { IoIosLogOut } from "react-icons/io";
 import { FaCircleUser } from "react-icons/fa6";
+import axios from "axios";
+import { userDate } from "../Api/Api";
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -27,9 +29,31 @@ const Login = () => {
     }
 
     toast.success(isLogin ? "Tizimga kirdingiz!" : "Ro'yxatdan o'tdingiz!");
+
+    // LocalStorage'ga ma'lumotlarni saqlash
     localStorage.setItem("name", name);
     localStorage.setItem("password", password);
-    setTimeout(() => navigate("/"), 1000);
+
+    // Yuboriladigan ma'lumotlar, shu jumladan vaqt
+    const dataToSend = {
+      name,
+      password,
+      date: new Date().toISOString(), // Hozirgi vaqtni ISO formatida olish
+    };
+
+    // API ga ma'lumot yuborish
+    axios
+      .post(userDate, dataToSend)
+      .then((response) => {
+        console.log(response.data); // API javobini konsolga chiqarish
+      })
+      .catch((error) => {
+        console.error("Xato yuz berdi:", error); // Xato haqida ma'lumot chiqarish
+        toast.error("Xato yuz berdi, iltimos qaytadan urinib ko'ring!"); // Xato xabari
+      });
+
+    // 1 soniya kutib, asosiy sahifaga yo'naltirish
+    navigate("/");
   };
 
   const handleClose = () => {
@@ -40,7 +64,7 @@ const Login = () => {
     <div className="bg-image-container relative h-screen">
       <button
         onClick={handleClose}
-        className="absolute top-9 right-9 text-cyan-50/100 text-center hover:text-white hover:bg-cyan-500 hover:ps-1 rounded-lg text-[27px] z-10"
+        className="absolute top-9 right-9 text-cyan-50/100 text-center hover:text-white hover:ps-1 rounded-lg text-[27px] z-10"
       >
         <IoIosLogOut />
       </button>
