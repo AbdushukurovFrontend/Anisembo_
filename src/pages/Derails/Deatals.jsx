@@ -47,7 +47,7 @@ function Details() {
 
   if (loading) {
     return (
-      <div className="p-4">
+      <div className=" container">
         <div className="flex justify-between items-center mb-4">
           <Skeleton />
           <Skeleton.Button active shape="round" size="large" />
