@@ -14,10 +14,11 @@ function Profil() {
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible); // Toggle the password visibility
   };
-
-  const userImg = localStorage.getItem("userImg");
+  const userImg =
+    localStorage.getItem("userImg") ||
+    "https://www.shutterstock.com/image-vector/blank-avatar-photo-place-holder-600nw-1095249842.jpg";
   const userName = localStorage.getItem("name");
-  const userpassword = localStorage.getItem("password");
+  const userPassword = localStorage.getItem("password");
 
   useEffect(() => {
     axios
@@ -64,12 +65,12 @@ function Profil() {
           <div className="mt-4">
             <div className="flex items-center gap-8 flex-wrap">
               {/* User Image Section */}
-              <div className="w-[200px] h-[246px] relative">
+              <div className=" relative">
                 <img
                   // src={userImg}
-                  src="https://i.pinimg.com/736x/3a/cb/c5/3acbc52506384cdd6ffd812d4dbbd24f.jpg"
+                  src={userImg}
                   alt="userImg not defined"
-                  className="rounded-xl w-full object-cover shadow-2xl"
+                  className="rounded-xl w-[200px] h-[246px] object-cover shadow-2xl"
                 />
                 {/* Add/Edit User Image */}
                 <div className="w-[70px] absolute top-44 right-0">
@@ -82,15 +83,15 @@ function Profil() {
               </div>
 
               {/* User Info Section */}
-              <div className="bg-slate-700 w-[400px] rounded-lg p-6 h-[250px] shadow-xl">
-                <button className=" p-2 bg-white shadow-md rounded-lg w-[350px] text-black text-start px-3">
+              <div className=" w-[400px] rounded-lg p-6 h-[250px] shadow-xl">
+                <button className=" bacgrooundDetals p-2 bg-white shadow-md rounded-lg w-[350px] text-black text-start px-3">
                   <h2 className=" font-semibold">{userName}</h2>
                 </button>
-                <div className="flex items-center relative mt-4">
-                  <p className="text-md font-medium mr-3  p-2 bg-white shadow-md rounded-lg w-[350px] text-black text-start px-3">
+                <div className="flex items-center  mt-4">
+                  <p className="text-md font-medium mr-3 relative  p-2 bg-white shadow-md rounded-lg w-[350px] text-black text-start px-3">
                     {passwordVisible
-                      ? userpassword
-                      : "•".repeat(userpassword.length)}
+                      ? userPassword
+                      : "•".repeat(userPassword.length)}
                     {/* Show password or dots */}
                   </p>
 
