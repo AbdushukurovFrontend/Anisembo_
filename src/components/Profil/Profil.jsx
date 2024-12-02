@@ -113,9 +113,7 @@ function Profil() {
                 </button>
                 <div className="flex items-center mt-4 p-3 relative w-full bg-white rounded-lg">
                   <p className="text-md font-medium mr-3 shadow-md text-black text-start">
-                    {passwordVisible
-                      ? userPassword
-                      : "•".repeat(userPassword.length)}
+                    {passwordVisible ? userPassword : "•".repeat(userPassword)}
                     {/* Show password or dots */}
                   </p>
 
