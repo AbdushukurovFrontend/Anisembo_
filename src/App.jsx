@@ -30,16 +30,17 @@ function App() {
       path: "details/:id",
       element: <Detals />,
     },
-    {
-      path: "/allnewCard/details/:id",
-      element: <Detals />,
-    },
+    // {
+    //   path: "/allnewCard/details/:id",
+    //   element: <Detals />,
+    // },
     {
       path: "/",
       element: <Rotlayout />,
       children: [
         {
-          path: "/",
+          // path: "/",
+          index: true,
           element: <Home />,
         },
 

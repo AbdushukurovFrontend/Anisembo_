@@ -81,7 +81,7 @@ function Allnewcard() {
             </button>
 
             {/* Image */}
-            <Link to={`details/${item.id}`}>
+            <Link to={`/details/${item.id}`}>
               <div>
                 <img
                   className="w-full h-[200px] md:h-[290px] rounded-lg object-cover"
