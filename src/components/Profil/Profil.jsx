@@ -137,7 +137,7 @@ function Profil() {
         )}
       </div>
     </div>
-  ); 
+  );
 }
 
 export default Profil;

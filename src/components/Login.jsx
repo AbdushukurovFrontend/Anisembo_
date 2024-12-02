@@ -77,7 +77,7 @@ function Login() {
       </button>
 
       {/* Login Form (Bottom half or right side) */}
-      <div className="w-[50%] h-[94%] xl:h-[94%] xl:w-[50%] backdrop-blur-lg flex items-center justify-center p-4 md:p-8 rounded-3xl shadow-lg">
+      <div className="w-[50%] h-[94%] xl:h-[82%] xl:w-[50%] backdrop-blur-lg flex items-center justify-center p-4 md:p-8 rounded-3xl shadow-lg">
         <div className="w-full max-w-md">
           {regs ? (
             <>
