@@ -6,6 +6,7 @@ import VideoPlayer from "./VideoPlayer";
 import { aniDubApi } from "../../Api/Api";
 import Header from "../../components/Header";
 import "./Detals.css";
+import { Skeleton } from "antd";
 
 // Comments Component
 function Comments({ item }) {
@@ -45,7 +46,16 @@ function Details() {
   }, [id]);
 
   if (loading) {
-    return <div>Yuklanmoqda...</div>;
+    return (
+      <div className="p-4">
+        <div className="flex justify-between items-center mb-4">
+          <Skeleton />
+          <Skeleton.Button active shape="round" size="large" />
+        </div>
+        <Skeleton.Image active className="w-full h-[200px]" />
+        <Skeleton active paragraph={{ rows: 4 }} className="mt-4" />
+      </div>
+    );
   }
 
   if (error) {

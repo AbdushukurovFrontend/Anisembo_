@@ -4,12 +4,14 @@ import userDefaultimg from "../../Img/userDefaultimg.png";
 import axios from "axios";
 import { userDate } from "../../Api/Api";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import DatePicker from "react-datepicker"; // Importing react-datepicker
+import "react-datepicker/dist/react-datepicker.css"; // Import the CSS
 
 function Profil() {
   const [activTab, setActiveTab] = useState("profil");
   const [data, setData] = useState([]);
-
   const [passwordVisible, setPasswordVisible] = useState(false); // Password visibility state
+  const [selectedDate, setSelectedDate] = useState(new Date()); // State to store the selected date
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible); // Toggle the password visibility
@@ -23,23 +25,20 @@ function Profil() {
   useEffect(() => {
     axios
       .get(userDate)
-
       .then((res) => {
         setData(res.data);
       })
       .catch((e) => {
         console.log("Error fetching user data: ", e);
       });
-  });
+  }, []); // Adding empty dependency array to avoid continuous API calls
 
   return (
     <div>
       <div className="container">
         {/* Profil header */}
 
-        {/* profil header */}
         <div className="flex space-x-4 mb-4 mt-10">
-          {" "}
           {/* Add space between buttons */}
           {["profil", "sevimlilar", "galeriya"].map((tab) => {
             return (
@@ -65,9 +64,8 @@ function Profil() {
           <div className="mt-4">
             <div className="flex items-center gap-8 flex-wrap">
               {/* User Image Section */}
-              <div className=" relative">
+              <div className="relative">
                 <img
-                  // src={userImg}
                   src={userImg}
                   alt="userImg not defined"
                   className="rounded-xl w-[200px] h-[246px] object-cover shadow-2xl"
@@ -83,12 +81,12 @@ function Profil() {
               </div>
 
               {/* User Info Section */}
-              <div className=" w-[400px] rounded-lg p-6 h-[250px] shadow-xl">
-                <button className=" bacgrooundDetals p-2 bg-white shadow-md rounded-lg w-[350px] text-black text-start px-3">
-                  <h2 className=" font-semibold">{userName}</h2>
+              <div className="w-[400px] rounded-lg p-6 h-[250px] shadow-xl">
+                <button className="bacgrooundDetals p-2 bg-white shadow-md rounded-lg w-[350px] text-black text-start px-3">
+                  <h2 className="font-semibold">{userName}</h2>
                 </button>
-                <div className="flex items-center  mt-4">
-                  <p className="text-md font-medium mr-3 relative  p-2 bg-white shadow-md rounded-lg w-[350px] text-black text-start px-3">
+                <div className="flex items-center mt-4">
+                  <p className="text-md font-medium mr-3 relative p-2 bg-white shadow-md rounded-lg w-[350px] text-black text-start px-3">
                     {passwordVisible
                       ? userPassword
                       : "•".repeat(userPassword.length)}
@@ -109,6 +107,18 @@ function Profil() {
                 </div>
               </div>
             </div>
+
+            {/* Date Picker Section */}
+            <div className="mt-4">
+              <h3 className="text-lg font-semibold">Select a Date</h3>
+              <DatePicker
+                selected={selectedDate}
+                onChange={(date) => setSelectedDate(date)} // Update the selected date
+                dateFormat="yyyy-MM-dd"
+                className="p-2 mt-2 w-full rounded-lg shadow-md border-2 border-gray-300"
+                inline // Display calendar inline for better UX
+              />
+            </div>
           </div>
         )}
 
@@ -125,11 +135,9 @@ function Profil() {
             <div>Galeriya</div>
           </div>
         )}
-
-        {/* Profil footer */}
       </div>
     </div>
-  );
+  ); 
 }
 
 export default Profil;
