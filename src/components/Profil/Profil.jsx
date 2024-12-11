@@ -156,15 +156,12 @@ function Profil() {
         {/* Galeriya content */}
         {activTab === "galeriya" && (
           <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 mt-4">
-            {[
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMdouSC-MNcjgiSzrlhQP_c4beyoKfTKO561uMpUT6ksbx5EF2oVWeBDS576KjKPy4qgg&usqp=CAU",
-              "",
-            ].map((item) => (
+            {["", "", "", ""].map((item) => (
               <div className="p-4">
                 <img
-                  src=""
+                  src={item}
                   alt=""
-                  className="rounded-lg w-[150px] h-[200px] "
+                  className="rounded-lg w-full h-[200px] object-cover"
                 />
               </div>
             ))}
