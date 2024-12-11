@@ -164,7 +164,7 @@ function Header() {
             <div className="flex items-end gap-4">
               <li>
                 {username ? (
-                  <Link to={"profil"}>
+                  <Link to={"/profil"}>
                     <button
                       style={{
                         backgroundImage: `url('https://i.pinimg.com/originals/ab/39/43/ab394303fe32175912ee20eae0e23cc5.gif')`,
@@ -179,7 +179,7 @@ function Header() {
                     </button>
                   </Link>
                 ) : (
-                  <Link to="login">
+                  <Link to="/login">
                     <button
                       style={{
                         backgroundImage: `url('https://i.pinimg.com/originals/ab/39/43/ab394303fe32175912ee20eae0e23cc5.gif')`,

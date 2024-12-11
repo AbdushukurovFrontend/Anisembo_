@@ -145,7 +145,7 @@ function Profil() {
             </div>
           </div>
         )}
-
+        {/* ,kdjsfb,kdfjsbg,dfsn */}
         {/* Sevimlilar content */}
         {activTab === "sevimlilar" && (
           <div className="mt-4">
